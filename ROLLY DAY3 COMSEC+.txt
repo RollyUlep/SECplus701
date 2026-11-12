@@ -1,0 +1,553 @@
+1000 points - passing 750 for SEC+ 
+
+manage > delete from disk 
+
+endtask - wazu agent 
+
+shift delete - c program files ossec-agent
+
+D:\__RivanVMs
+extract here 
+IR-ElasticSys.7z
+WAZUHv2.rar
+
+--------------------
+
+SIEM - for endpoint log reading 
+WAZUH - wazuh.com - free cloud 
+
+
+Crowdstrike - for network
+
+elasticsearch- network log reading - 
+ * elastic.co/elasticsearch
+ * syslogs
+
+
+Zabbix - Zabbix.com
+ * physical health monitoring of device - system requirement
+ 
+ 
+lstack 
+
+
+JumpServer
+ * www.jumpserver.com
+ * single UI to access different Servers
+ 
+-------------------------------------
+
+credentials wazuh :
+root
+C1sc0123
+systemctl stop firewalld
+ip addr
+
+ping 208.8.8.222
+
+
+
+in GUI : 
+208.8.8.222
+admin
+C1sc0123..
+
+
+https://208.8.8.222/app/wz-home#/overview/?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-24h,to:now))&_a=(filters:!(),query:(language:kuery,query:''))
+
+
+attack.mitre.org
+
+
+SOAR 
+ * connect AI 
+
+
+shuffle  
+wazuh integration with shuffle 
+
+
+Agentic 
+ * use AI 
+
+Chatgpt 
+ * use Claude Agent
+
+
+NIST 800-53
+
+Cloud Agent - Dashboard 
+
+amd- rizen
+
+
+Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.12.0-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER='208.8.8.222' WAZUH_AGENT_NAME='ROLLY' 
+
+ 
+Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.12.0-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER='208.8.8.222' WAZUH_AGENT_NAME='ROLLY' 
+
+NET START WazuhSvc
+
+
+PS C:\Users\Administrator> Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.12.0-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER='208.8.8.222' WAZUH_AGENT_NAME='ROLLY'
+PS C:\Users\Administrator> NET START WazuhSvc
+
+The Wazuh service was started successfully.
+
+PS C:\Users\Administrator>
+
+
+FORCE registration: 
+
+C:\Program Files (x86)\ossec-agent
+win32ui.exe
+
+change address:
+  <client>
+    <server>
+      <address>208.8.8.222</address>
+      <port>1514</port>
+	  
+****
+can be changed in ossec.conf : 
+
+  <!-- File integrity monitoring -->
+  <syscheck>
+
+    <disabled>no</disabled>
+
+    <!-- Frequency that syscheck is executed default every 12 hours -->
+    <frequency>43200</frequency>
+	
+C:\Users\Administrator\Desktop\rolly
+
+line 91 
+    <directories realtime="yes" check_all="yes" report_changes="yes">C:\Users\Administrator\Desktop\rolly></directories>
+	
+
+
+https://codeshare.io/ad8bJB
+
+
+Levels 0–3 → "Just logs"
+
+Normal system behavior.
+Example:
+
+*User logged in
+
+*Service started
+
+*Cron job ran
+
+SOC action: Ignore / archive
+------------------------------------------------------------------
+Levels 4–6 → "Something changed"
+
+Not necessarily bad, but worth knowing.
+
+Examples:
+
+*File modified
+
+*New process started
+
+*USB plugged in
+
+SOC action: Review if unexpected
+-------------------------------------------------------------------------
+Levels 7–9 → "Suspicious"
+
+Looks like an attack pattern, but not confirmed.
+
+Examples:
+
+*3 failed SSH logins
+
+*Port scan detected
+
+*New admin command
+
+SOC action: Investigate
+------------------------------------------------------------------------------
+ Levels 10–12 → "Confirmed attack"
+
+This is where real incidents begin.
+
+Examples:
+
+*SSH brute force
+  > use nmap -v ip address 
+  
+*Web attack signature
+
+*Privilege escalation
+
+SOC action: Incident response
+------------------------------------------------------------------------------
+Levels 13–15 → "Critical breach"
+
+System is probably compromised.
+
+Examples:
+
+Rootkit found
+
+Malware detected
+
+System binary modified
+
+SOC action:
+
+Isolate system, block IP, forensics
+
+
+--
+C:\Users\Administrator>nmap -v www.neu.edu.ph
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-12 10:57 +0800
+Initiating Parallel DNS resolution of 1 host. at 10:57
+Completed Parallel DNS resolution of 1 host. at 10:57, 1.60s elapsed
+refresh_hostbatch: Failed to determine dst MAC address for target www.neu.edu.ph (74.91.223.199)
+Nmap scan report for www.neu.edu.ph (74.91.223.199) [host down]
+Read data files from: C:\Program Files (x86)\Nmap
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 2.69 seconds
+           Raw packets sent: 3 (84B) | Rcvd: 0 (0B)
+
+C:\Users\Administrator>
+
+JSON
+
+look for data 
+
+ },
+    "data": {
+      "YARA": {
+        "reference": "838d57ecc92af0587a3864ee7f14911c",
+        "api_customer": "prod",
+        "log_type": "WARNING",
+        "scanned_file": "/home/wazuh-user/yara/malware/backdoor/html",
+        "rule_author": "Niina Nyholm",
+        "rule_name": "Webshell_Better_Linux_Shell_9_RID120",
+        "rule_description": "Web Shell - file Worse.html",
+        "published_date": "2026-11-06T18:43:17.514Z",
+        "tags": [
+          "WEBSHELL",
+          "DEMO",
+          "T1505_003"
+        ]
+      }
+    },
+    "@sampledata": true,
+    "rule": {
+      "firedtimes": 2419,
+      "mail": false,
+      "level": 15,
+      "description": "File \"\" is a positive match. Yara rule: ",
+      "groups": [
+        "yara"
+      ],
+      "id": "2955"
+	  
+---
+Ctrl Alt to move out of linux 
+
+IR-Elastic  - 
+
+
+systemctl restart elasticsearch.service
+ip addr
+
+GUI 
+
+208.8.8.133:5601
+credentials: 
+admin
+C1sc0123
+
+
+
+
+csr1000v-universalk9.17.03.01a (VOIP Features).ova
+f1k-rolly
+
+
+
+f1k>
+enable 
+conf t
+int g1
+ip addr dhcp
+no shut
+end 
+
+
+secureRT to 208.8.8.224
+admin
+C1sc0123
+
+
+
+conf t
+logging on
+logging host 208.8.8.133 transport udp port 9001
+logging trap informational
+end
+
+
+conf t
+archive 
+log config 
+logging enable 
+notify syslog
+end 
+
+---
+conf t
+login on-failure log
+login on-success log
+end
+
+---
+block porn
+
+
+config t
+NO ip access-list standard NOPORN
+ip access-list standard NOPORN
+DENY 66.254.0.0 0.0.255.255  log
+deny 161.49.0.0 0.0.255.255  log
+DENY 104.21.0.0 0.0.255.255  log
+DENY 68.235.0.0 0.0.255.255  log
+DENY 104.17.0.0 0.0.255.255  log
+DENY 88.208.0.0 0.0.255.255  log
+DENY 208.77.0.0 0.0.255.255  log
+DENY 172.67.0.0 0.0.255.255  log
+DENY 172.66.0.0 0.0.255.255  log
+DENY 162.159.0.0 0.0.255.255 log
+Permit Any
+Int Gi 1
+ ip access-group NOPORN in
+end
+
+ping 208.8.8.133
+
+
+f1k#ping 208.8.8.133
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 208.8.8.133, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms
+f1k#f1k
+
+
+-----
+
+  },
+    "event": {
+      "severity": 7,
+      "ingested": "2026-11-12T04:37:33.150080542Z",
+      "original": "12 12:37:21.043: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admin] [Source: 208.8.8.1] [localport: 22] at 12:37:21 UTC Thu Nov 12 2026",
+      "timezone": "+08:00",
+      "module": "cisco",
+      "dataset": "cisco.asa"
+    },
+	
+	
+	    "event": {
+      "severity": 6,
+      "ingested": "2026-11-12T04:43:30.395534596Z",
+      "original": "12 12:43:18.278: %SYS-6-LOGOUT: User admin has exited tty session 1(208.8.8.1)",
+      "timezone": "+08:00",
+      "module": "cisco",
+      "dataset": "cisco.asa"
+    },
+	
+	    "event": {
+      "severity": 5,
+      "ingested": "2026-11-12T04:42:54.625106939Z",
+      "original": "12 12:42:42.530: %PARSER-5-CFGLOG_LOGGEDCMD: User:admin  logged command:login on-success log ",
+      "timezone": "+08:00",
+      "module": "cisco",
+      "dataset": "cisco.asa"
+	  
+---
+config to check someone is accessing server: 
+
+config t
+access-list 100 deny ip any host 208.8.8.224 log
+access-list 100 permit ip any any
+interface GigabitEthernet1
+ip access-group 100 in
+
+
+###get back the ping and able to ssh again
+
+config t
+interface GigabitEthernet0/0
+no ip access-group 100 in
+end
+	
+----
+
+
+      "severity": 6,
+      "ingested": "2026-11-12T04:51:12.344452321Z",
+      "original": "12 12:50:59.849: %FMANFP-6-IPACCESSLOGP: R0/0: fman_fp_image: list 100 denied tcp 208.8.8.1(16019) -> 208.8.8.224(22), 1 packet",
+      "timezone": "+08:00",
+      "module": "cisco",
+      "dataset": "cisco.asa"
+    },
+	
+---------
+How to block porn site 
+
+
+config t
+NO ip access-list standard NOPORN
+ip access-list standard NOPORN
+DENY 66.254.0.0 0.0.255.255  log
+deny 161.49.0.0 0.0.255.255  log
+DENY 104.21.0.0 0.0.255.255  log
+DENY 68.235.0.0 0.0.255.255  log
+DENY 104.17.0.0 0.0.255.255  log
+DENY 88.208.0.0 0.0.255.255  log
+DENY 208.77.0.0 0.0.255.255  log
+DENY 172.67.0.0 0.0.255.255  log
+DENY 172.66.0.0 0.0.255.255  log
+DENY 162.159.0.0 0.0.255.255 log
+Permit Any
+Int Gi 1
+ ip access-group NOPORN in
+end
+
+
+
+
+f1k#
+
+
+
+f1k#ping www.pornhub.com
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 66.254.114.41, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+f1k#
+
+
+
+----
+
+NetOPS.7z
+NetOps VM
+ * Jump Server
+ NetOps.ovf
+ 
+credentials: 
+root
+C1sc0123
+
+Netadapter 1 - NAT
+Netadapter 2 - custom 
+
+ip -4 addr
+
+3RD IP ADDRESS 
+192.168.102.100
+
+GUI 
+192.168.102.100:4000
+credentials 
+admin
+C1sc0123
+
+
+COMMAND PROMPT 
+
+ping 10.31.1.4
+
+
+
+----------
+For Authentication 
+
+!@COREBABA
+! cannot loggin indicate user pass 
+
+config t
+ip domain-name rivanit.com
+username admin privilege 15 secret pass
+username rolly privilege 15 secret pass
+crypto key generate rsa
+
+!How many bits in the modulus [512]: 2048
+
+ip ssh version 2
+line vty 0 14
+login local
+transport input ssh
+end
+
+
+
+
+
+Ulep 
+
+
+
+Check  Audit 
+
+Session commands 
+
+
+
+
+----------
+
+
+zabbix_appliance-7.4.6-vmx.tar.gz
+
+
+credentials: 
+root
+zabbix
+
+
+systemctl restart zabbix-server
+dnf install net-snmp-utils -y
+
+
+
+208.8.8.226
+
+credentials: 
+Admin
+zabbix
+
+
+
+!@put in for snmpV2 CSR1000V f1k
+config t 
+access-list 10 permit 208.8.8.226
+snmp-server community public RO 10
+
+!@!@ SNMPV3 csr1000v
+config t
+snmp-server group zabbix v3 priv
+snmp-server user admin zabbix v3 auth sha C1sc0123 priv aes 128 C1sc0123
+
+
+
+
+
+
+
+
+
+
+
+
+
+
