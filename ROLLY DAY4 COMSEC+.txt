@@ -102,6 +102,11 @@ COREtaas-31(config)#
 ========================
 ========================
 
+github
+ * look in SECplus701 - DAY1-FNET-SCCP
+ 
+ 
+ 
 CUCM
 
 securecrt: serial, com usb serial , 9600, disable xon/xoff
@@ -156,6 +161,264 @@ execute factoryreset
 ========================
 ========================
 ========================
+ping - layer icmp protocol 
+
+
+Fortinet
+
+new credentials: 
+
+default 
+admin 
+[press enter]
+
+
+default ip address of Fortinet : 192.168.1.99/24
+
+new password: pass
+
+
+
+execute ping 10.31.1.2
+execute ping 10.31.1.4
+execute ping 10.31.1.10
+
+
+
+GUI of fortine firewall 
+https://10.31.31.1
+https://10.31.31.1/ng/prompt?viewOnly&redir=%2Fng
+
+
+
+
+fortinet 6.4
+
+dapat fortinet version 7 pataas 
+
+
+command prompt of tunay na PC 
+run command 
+route print 
+
+
+
+
+C:\Users\Administrator>route print
+===========================================================================
+Interface List
+ 12...00 50 56 c0 00 08 ......VMware Virtual Ethernet Adapter for VMnet8
+  4...e0 d0 45 bb 9c f3 ......Microsoft Wi-Fi Direct Virtual Adapter
+ 32...e2 d0 45 bb 9c f2 ......Microsoft Wi-Fi Direct Virtual Adapter #2
+ 28...e0 d0 45 bb 9c f2 ......Intel(R) Wi-Fi 6E AX210 160MHz
+ 30...00 50 56 c0 00 01 ......VMware Virtual Ethernet Adapter for VMnet1
+ 33...00 50 56 c0 00 02 ......VMware Virtual Ethernet Adapter for VMnet2
+ 20...00 50 56 c0 00 03 ......VMware Virtual Ethernet Adapter for VMnet3
+ 17...00 50 56 c0 00 04 ......VMware Virtual Ethernet Adapter for VMnet4
+ 16...00 50 56 c0 00 05 ......VMware Virtual Ethernet Adapter for VMnet5
+ 21...00 09 0f fe 00 01 ......Fortinet Virtual Ethernet Adapter (NDIS 6.30)
+  1...........................Software Loopback Interface 1
+ 31...00 be 43 ee cd da ......Realtek PCIe GbE Family Controller
+===========================================================================
+
+IPv4 Route Table
+===========================================================================
+Active Routes:
+Network Destination        Netmask          Gateway       Interface  Metric
+          0.0.0.0          0.0.0.0         10.3.3.1       10.3.3.131    200
+          0.0.0.0          0.0.0.0        10.31.1.1       10.31.1.10    101
+          0.0.0.0          0.0.0.0        10.31.1.4       10.31.1.10    101
+         10.0.0.0        255.0.0.0        10.31.1.4       10.31.1.10    101
+         10.3.3.0    255.255.255.0         On-link        10.3.3.131    356
+       10.3.3.131  255.255.255.255         On-link        10.3.3.131    356
+       10.3.3.255  255.255.255.255         On-link        10.3.3.131    356
+        10.31.0.0      255.255.0.0        10.31.1.4       10.31.1.10    101
+        10.31.1.0    255.255.255.0         On-link        10.31.1.10    356
+       10.31.1.10  255.255.255.255         On-link        10.31.1.10    356
+      10.31.1.255  255.255.255.255         On-link        10.31.1.10    356
+        127.0.0.0        255.0.0.0         On-link         127.0.0.1    331
+        127.0.0.1  255.255.255.255         On-link         127.0.0.1    331
+  127.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+    192.168.101.0    255.255.255.0         On-link     192.168.101.1    291
+    192.168.101.1  255.255.255.255         On-link     192.168.101.1    291
+  192.168.101.255  255.255.255.255         On-link     192.168.101.1    291
+    192.168.102.0    255.255.255.0         On-link     192.168.102.1    291
+    192.168.102.1  255.255.255.255         On-link     192.168.102.1    291
+  192.168.102.255  255.255.255.255         On-link     192.168.102.1    291
+    192.168.103.0    255.255.255.0         On-link     192.168.103.1    291
+    192.168.103.1  255.255.255.255         On-link     192.168.103.1    291
+  192.168.103.255  255.255.255.255         On-link     192.168.103.1    291
+    192.168.104.0    255.255.255.0         On-link     192.168.104.1    291
+    192.168.104.1  255.255.255.255         On-link     192.168.104.1    291
+  192.168.104.255  255.255.255.255         On-link     192.168.104.1    291
+    192.168.105.0    255.255.255.0         On-link     192.168.105.1    291
+    192.168.105.1  255.255.255.255         On-link     192.168.105.1    291
+  192.168.105.255  255.255.255.255         On-link     192.168.105.1    291
+        200.0.0.0    255.255.255.0        10.31.1.4       10.31.1.10    101
+        208.8.8.0    255.255.255.0         On-link         208.8.8.1    257
+        208.8.8.1  255.255.255.255         On-link         208.8.8.1    257
+      208.8.8.255  255.255.255.255         On-link         208.8.8.1    257
+        224.0.0.0        240.0.0.0         On-link         127.0.0.1    331
+        224.0.0.0        240.0.0.0         On-link     192.168.101.1    291
+        224.0.0.0        240.0.0.0         On-link         208.8.8.1    257
+        224.0.0.0        240.0.0.0         On-link     192.168.102.1    291
+        224.0.0.0        240.0.0.0         On-link     192.168.103.1    291
+        224.0.0.0        240.0.0.0         On-link     192.168.104.1    291
+        224.0.0.0        240.0.0.0         On-link     192.168.105.1    291
+        224.0.0.0        240.0.0.0         On-link        10.31.1.10    356
+        224.0.0.0        240.0.0.0         On-link        10.3.3.131    356
+  255.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+  255.255.255.255  255.255.255.255         On-link     192.168.101.1    291
+  255.255.255.255  255.255.255.255         On-link         208.8.8.1    257
+  255.255.255.255  255.255.255.255         On-link     192.168.102.1    291
+  255.255.255.255  255.255.255.255         On-link     192.168.103.1    291
+  255.255.255.255  255.255.255.255         On-link     192.168.104.1    291
+  255.255.255.255  255.255.255.255         On-link     192.168.105.1    291
+  255.255.255.255  255.255.255.255         On-link        10.31.1.10    356
+  255.255.255.255  255.255.255.255         On-link        10.3.3.131    356
+===========================================================================
+Persistent Routes:
+  Network Address          Netmask  Gateway Address  Metric
+        200.0.0.0    255.255.255.0        10.31.1.4       1
+         10.0.0.0        255.0.0.0        10.31.1.4       1
+        10.31.0.0      255.255.0.0        10.31.1.4       1
+      172.16.29.0    255.255.255.0      10.69.255.6       1
+     10.69.255.13  255.255.255.255      10.69.255.6       1
+          0.0.0.0          0.0.0.0         10.3.3.1       1
+          0.0.0.0          0.0.0.0        10.31.1.1       1
+          0.0.0.0          0.0.0.0        10.31.1.4       1
+===========================================================================
+
+IPv6 Route Table
+===========================================================================
+Active Routes:
+ If Metric Network Destination      Gateway
+  1    331 ::1/128                  On-link
+ 28    286 baba:dada:fafa::/64      On-link
+ 28    286 baba:dada:fafa::31/128   On-link
+ 30    291 fe80::/64                On-link
+ 33    291 fe80::/64                On-link
+ 20    291 fe80::/64                On-link
+ 17    291 fe80::/64                On-link
+ 16    291 fe80::/64                On-link
+ 28    286 fe80::/64                On-link
+ 20    291 fe80::d97:5b3a:4418:e3a3/128
+                                    On-link
+ 16    291 fe80::218c:4695:b68d:ab9e/128
+                                    On-link
+ 17    291 fe80::3736:7993:d286:c1df/128
+                                    On-link
+ 30    291 fe80::5e44:a518:e172:436d/128
+                                    On-link
+ 28    286 fe80::cc12:dec3:8cd7:3bac/128
+                                    On-link
+ 33    291 fe80::f3b6:4166:bb5b:ce68/128
+                                    On-link
+  1    331 ff00::/8                 On-link
+ 30    291 ff00::/8                 On-link
+ 33    291 ff00::/8                 On-link
+ 20    291 ff00::/8                 On-link
+ 17    291 ff00::/8                 On-link
+ 16    291 ff00::/8                 On-link
+ 28    286 ff00::/8                 On-link
+===========================================================================
+Persistent Routes:
+  None
+
+C:\Users\Administrator>
+C:\Users\Administrator>
+
+---
+how to  check connectivity on foreign addresses : 
+netstat -n -p tcp
+
+
+C:\Users\Administrator>netstat -n -p tcp
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    10.3.3.131:6662        162.159.140.167:443    ESTABLISHED
+  TCP    10.3.3.131:37437       172.172.255.217:443    ESTABLISHED
+  TCP    10.3.3.131:39809       140.82.114.25:443      ESTABLISHED
+  TCP    10.3.3.131:51534       208.8.8.222:1514       SYN_SENT
+  TCP    10.3.3.131:64215       140.82.113.26:443      ESTABLISHED
+  TCP    10.31.1.10:6258        10.31.31.1:443         ESTABLISHED
+  TCP    10.31.1.10:6929        10.31.31.1:443         TIME_WAIT
+  TCP    10.31.1.10:9944        10.31.31.1:443         ESTABLISHED
+  TCP    10.31.1.10:13687       10.31.31.1:443         TIME_WAIT
+  TCP    10.31.1.10:18179       10.31.31.1:443         TIME_WAIT
+  TCP    10.31.1.10:18861       10.31.31.1:443         TIME_WAIT
+  TCP    10.31.1.10:22481       10.31.31.1:443         TIME_WAIT
+  TCP    10.31.1.10:22599       10.31.31.1:443         ESTABLISHED
+  TCP    10.31.1.10:23073       10.31.31.1:443         TIME_WAIT
+  TCP    10.31.1.10:26652       10.31.1.4:23           ESTABLISHED
+  TCP    10.31.1.10:27928       10.31.31.1:443         ESTABLISHED
+  TCP    10.31.1.10:28072       10.31.31.1:443         TIME_WAIT
+  TCP    10.31.1.10:33016       10.31.31.1:443         TIME_WAIT
+  TCP    10.31.1.10:44623       10.31.31.1:443         TIME_WAIT
+  TCP    10.31.1.10:44952       10.31.1.4:23           ESTABLISHED
+  TCP    10.31.1.10:51532       10.31.31.1:443         ESTABLISHED
+  TCP    10.31.1.10:51543       10.31.1.8:3260         SYN_SENT
+  TCP    10.31.1.10:55153       10.31.31.1:443         ESTABLISHED
+  TCP    10.31.1.10:55858       10.31.31.1:443         TIME_WAIT
+  TCP    10.31.1.10:57488       10.31.1.2:23           ESTABLISHED
+  TCP    10.31.1.10:60627       10.31.1.4:23           ESTABLISHED
+  TCP    10.31.1.10:65182       10.31.31.1:443         TIME_WAIT
+  TCP    127.0.0.1:6379         127.0.0.1:49674        ESTABLISHED
+  TCP    127.0.0.1:6379         127.0.0.1:49677        ESTABLISHED
+  TCP    127.0.0.1:49674        127.0.0.1:6379         ESTABLISHED
+  TCP    127.0.0.1:49677        127.0.0.1:6379         ESTABLISHED
+  TCP    127.0.0.1:57391        127.0.0.1:57392        ESTABLISHED
+  TCP    127.0.0.1:57392        127.0.0.1:57391        ESTABLISHED
+
+C:\Users\Administrator>\
+'\' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Administrator>
+C:\Users\Administrator>S
+
+
+
+!COREBABA
+
+ip route 0.0.0.0 0.0.0.0 10.M.M.31
+ip route 0.0.0.0 0.0.0.0 10.31.31.31
+
+! to check routing able 
+sh run | s route
+
+
+Block sites ip  - Layer 3 at 4 
+
+pornhub.com	66.254.114.41
+onlyfans.com	162.159.140.146 
+beeg.com	104.21.56.86	
+			172.67.181.179
+faketaxi.com	66.254.114.234
+bangbus.com	66.254.114.234
+xvideos.com	89.222.127.13
+			89.22.127.12
+			89.222.127.9
+			
+pinayflix.com	104.21.55.88
+			172.67.146.93
+			
+vivamax.com	64.98.135.95
+sulasok.tv	172.67.159.23
+			104.21.34.102
+brazzers.com	66.254.114.234
+digitalplayground.com	66.254.114.234
+bangbros.com	66.254.114.234
+	
+
+66.254.114.0/24
+104.21.0.0/16
+172.67.0.0/16
+104.18.29.44/32
+89.222.127.0/24
+162.159.140.146/32
 
 
 
@@ -164,8 +427,20 @@ execute factoryreset
 ========================
 ========================
 
+pearsonvuew.com - > COMPTIA -> Login
+personal email address
+password
+
+gmail 
+
+schedule an 
+
+select in person
 
 
+Testing Center 
+LITS
+MISNET 
 
 ========================
 ========================
